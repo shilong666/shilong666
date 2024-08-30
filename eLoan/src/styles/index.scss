@@ -1,0 +1,102 @@
+@import './flex.scss';
+@import './uview.scss';
+
+image {
+  display: block;
+}
+page {
+  --primary-color: #365ef6; // 主色调
+  --button-color: rgba(2, 167, 240, 0.996); // 小按钮背景色
+  --light-color: #fff; // 亮色
+  --font-color: #212121; // 文字颜色
+  --font-sub-color: #a8a8a8; // 二级文字颜色
+  --font-size: 28rpx; // 文字大小
+  --bg-color: #f4f6fc;
+
+  height: 100%;
+  overflow: auto;
+  font-size: var(--font-size);
+  background: var(--bg-color);
+  color: var(--font-color);
+  font-family: PingFang SC, Verdana, Helvetica Neue, Microsoft Yahei,
+    Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
+}
+
+.page {
+  min-height: 100%;
+  width: 100%;
+  .body-content {
+    padding: 20rpx 30rpx;
+  }
+}
+// 超出行省略
+.text-over {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+// 超出两行省略
+.text-over2 {
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.card {
+  width: 100%;
+  padding: 20rpx;
+  background: var(--light-color);
+  border-radius: 20rpx;
+}
+
+.button {
+  width: 100%;
+  height: 80rpx;
+  border-radius: 18rpx;
+  background: var(--primary-color);
+  color: var(--light-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+.button.disabled {
+  pointer-events: none;
+  background: #f4f6fc;
+  color: #c4c4c4;
+  border-color: transparent;
+}
+
+.uni-modal {
+  border-radius: 20rpx !important;
+  z-index: 99999 !important;
+  .uni-modal__title {
+    font-weight: bold;
+  }
+}
+uni-page-head {
+  display: none !important;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.pd20 {
+  padding: 20rpx;
+}
+
+.safe-area {
+  padding-bottom: constant(safe-area-inset-bottom) !important; // ios<11.2
+  padding-bottom: env(safe-area-inset-bottom) !important; // ios>11.2
+}
+
+.bg-filter {
+  background-image: radial-gradient(transparent 1px, var(--bg-color) 1px);
+  background-size: 4px 4px;
+  backdrop-filter: saturate(50%) blur(4px);
+}

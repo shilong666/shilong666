@@ -1,0 +1,221 @@
+{
+  "easycom": {
+    "^u-(.*)": "uview-ui/components/u-$1/u-$1.vue",
+    "^cust-(.*)": "@/components/cust-$1/cust-$1.vue",
+    "^(?!z-paging-refresh|z-paging-load-more)z-paging(.*)": "z-paging/components/z-paging$1/z-paging$1.vue"
+  },
+  "pages": [
+    //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "首页"
+      }
+    },
+    {
+      "path": "pages/shopCenter/index",
+      "style": {
+        "navigationBarTitleText": "电商中心"
+      }
+    },
+    {
+      "path": "pages/user/index",
+      "style": {
+        "navigationBarTitleText": "我的"
+      }
+    },
+    {
+      "path": "pages/companyAuth/index",
+      "style": {
+        "navigationBarTitleText": "企业认证"
+      }
+    },
+    {
+      "path": "pages/companyAuth/legalPerson",
+      "style": {
+        "navigationBarTitleText": "企业认证"
+      }
+    },
+    {
+      "path": "pages/companyAuth/operator",
+      "style": {
+        "navigationBarTitleText": "企业认证"
+      }
+    },
+    {
+      "path": "pages/companyAuth/result",
+      "style": {
+        "navigationBarTitleText": "企业认证"
+      }
+    },
+    {
+      "path": "pages/store/index",
+      "style": {
+        "navigationBarTitleText": "店铺管理"
+      }
+    },
+    {
+      "path": "pages/store/add",
+      "style": {
+        "navigationBarTitleText": "新增店铺"
+      }
+    },
+    {
+      "path": "pages/bankAccount/index",
+      "style": {
+        "navigationBarTitleText": "账户管理"
+      }
+    },
+    {
+      "path": "pages/bankAccount/add",
+      "style": {
+        "navigationBarTitleText": "新增账户"
+      }
+    },
+    {
+      "path": "pages/protocolList/index",
+      "style": {
+        "navigationBarTitleText": "协议列表"
+      }
+    },
+    {
+      "path": "pages/protocolList/sigin",
+      "style": {
+        "navigationBarTitleText": "协议签署"
+      }
+    },
+    {
+      "path": "pages/regulatoryAccount/index",
+      "style": {
+        "navigationBarTitleText": "开监管户"
+      }
+    },
+    {
+      "path": "pages/regulatoryAccount/bind",
+      "style": {
+        "navigationBarTitleText": "监管账户关联店铺"
+      }
+    },
+    {
+      "path": "pages/changeMobile/index",
+      "style": {
+        "navigationBarTitleText": "店铺主账户手机号换绑"
+      }
+    },
+    {
+      "path": "pages/amtApply/index",
+      "style": {
+        "navigationBarTitleText": "请款申请"
+      }
+    },
+    {
+      "path": "pages/amtApply/serviceFee",
+      "style": {
+        "navigationBarTitleText": "缴纳服务费"
+      }
+    },
+    {
+      "path": "pages/amtApply/detail",
+      "style": {
+        "navigationBarTitleText": "请款详情"
+      }
+    },
+    {
+      "path": "pages/amtApply/batchInfo",
+      "style": {
+        "navigationBarTitleText": "批次号"
+      }
+    },
+    {
+      "path": "pages/amtApply/batchOrderDetail",
+      "style": {
+        "navigationBarTitleText": "订单详情"
+      }
+    },
+    {
+      "path": "pages/amtTransferOut/index",
+      "style": {
+        "navigationBarTitleText": "尾款转出"
+      }
+    },
+    {
+      "path": "pages/amtTransferOut/recordDetail",
+      "style": {
+        "navigationBarTitleText": "变动记录详情"
+      }
+    },
+    {
+      "path": "pages/question/index",
+      "style": {
+        "navigationBarTitleText": "常见问题"
+      }
+    },
+    {
+      "path": "pages/about/index",
+      "style": {
+        "navigationBarTitleText": "关于我们"
+      }
+    },
+    {
+      "path": "pages/contact/index",
+      "style": {
+        "navigationBarTitleText": "联系客服"
+      }
+    },
+    {
+      "path": "pages/login/index",
+      "style": {
+        "navigationBarTitleText": "登录"
+      },
+      "meta": {
+        "auth": false
+      }
+    },
+    {
+      "path": "pages/rich-text/index",
+      "style": {
+        "navigationBarTitleText": ""
+      }
+    },
+    {
+      "path": "pages/webview/index",
+      "style": {
+        "navigationBarTitleText": ""
+      },
+      "meta": {
+        "auth": false
+      }
+    }
+  ],
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#365ef6",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/static/images/tabbar/home.png",
+        "selectedIconPath": "/static/images/tabbar/home_active.png"
+      },
+      {
+        "pagePath": "pages/shopCenter/index",
+        "text": "电商中心",
+        "iconPath": "/static/images/tabbar/store.png",
+        "selectedIconPath": "/static/images/tabbar/store_active.png"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "text": "我的",
+        "iconPath": "/static/images/tabbar/user.png",
+        "selectedIconPath": "/static/images/tabbar/user_active.png"
+      }
+    ]
+  },
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "",
+    "navigationStyle": "custom",
+    "backgroundColor": "#F4F6FC"
+  }
+}
