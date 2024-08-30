@@ -1,0 +1,61 @@
+// global transition css
+
+/* fade */
+.fade-enter-from,
+.fade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
+}
+.fade-enter-to,
+.fade-leave-from {
+  opacity: 1;
+}
+.fade-enter-active {
+  transition: all 0.7s ease;
+}
+.fade-leave-active {
+  transition: all 0.3s cubic-bezier(1, 0.6, 0.6, 1);
+}
+
+/* fade-transform */
+.fade-transform-leave-active,
+.fade-transform-enter-active {
+  transition: all 0.5s;
+}
+
+.fade-transform-enter-from {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.fade-transform-leave-to {
+  opacity: 0;
+  transform: translateX(20px);
+}
+.fade-transform-enter-to,
+.fade-transform-leave-from {
+  opacity: 1;
+}
+
+/* breadcrumb transition */
+.breadcrumb-enter-active,
+.breadcrumb-leave-active {
+  transition: all 0.5s;
+}
+
+.breadcrumb-enter-from,
+.breadcrumb-leave-to {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+.breadcrumb-leave-to {
+  transform: translateX(20px);
+}
+.breadcrumb-enter-to,
+.breadcrumb-leave-from {
+  opacity: 1;
+}
+
+.breadcrumb-leave-active {
+  position: absolute;
+}

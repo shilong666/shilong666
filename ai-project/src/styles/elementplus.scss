@@ -1,0 +1,135 @@
+// card
+.el-card {
+  --el-card-border-radius: var(--border-radius);
+}
+.el-card__header {
+  padding: 0 !important;
+  color: #333;
+}
+
+// button
+.el-button--small {
+  --el-button-size: 30px !important;
+}
+
+// 鼠标选中
+::selection {
+  background: var(--el-color-primary);
+  color: var(--el-color-white);
+}
+
+// 表单
+.el-form-item__label {
+  color: #333;
+  font-weight: 900;
+  align-items: center;
+  line-height: inherit;
+}
+.el-form-item__content {
+  > div {
+    width: 100% !important;
+  }
+  &:not(:has(> *)),
+  &:has(> span),
+  &:has(.is-disabled) {
+    // 注意：:has() 是一个CSS选择器 Level 4 的提案，目前在CSS中还未被完全支持
+    width: calc(100% - 10px) !important;
+    background: #f7f7f7;
+    padding: 0 8px;
+    border-radius: 4px;
+  }
+  .is-disabled {
+    .el-input__wrapper {
+      border: none;
+      background: #f7f7f7;
+      .el-input__suffix {
+        display: none;
+      }
+      .el-input__inner {
+        color: #666;
+      }
+    }
+    .el-textarea__inner {
+      box-shadow: none;
+      --el-disabled-bg-color: #f7f7f7;
+    }
+  }
+  .is-disabled.el-radio {
+    display: none;
+
+    .is-disabled {
+      display: none;
+    }
+    span.el-radio__label {
+      color: #666;
+    }
+  }
+  .is-disabled.el-radio.is-checked {
+    display: block;
+  }
+}
+// 表格
+.cell,
+.el-input__inner,
+.el-textarea__inner {
+  color: #000;
+  font-size: 15px;
+}
+.el-table__inner-wrapper {
+  z-index: 1;
+}
+.cell {
+  .el-button--small {
+    font-size: 14px;
+  }
+}
+
+// 输入框
+.el-input,
+.el-input.el-focus {
+  .el-input__wrapper {
+    box-shadow: none !important;
+    border: 1px solid var(--el-input-border-color);
+    transition: border 0.2s ease;
+    --el-select-input-focus-border-color: transparent;
+  }
+  // 输入框获得焦点
+  .el-input__wrapper.is-focus {
+    border: 1px solid var(--el-color-primary);
+    box-shadow: none !important;
+  }
+  // 输入框浏览器自动填充
+  input {
+    &:-webkit-autofill {
+      box-shadow: 0 0 0px 1000px #fff inset !important;
+      -webkit-text-fill-color: #454545 !important;
+    }
+  }
+  // 去除输入框type=number时候显示的上下箭头
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+}
+
+.el-menu {
+  font-weight: 400;
+}
+.el-tag {
+  --el-tag-border-radius: var(--border-radius);
+}
+.el-dialog {
+  --el-dialog-border-radius: var(--border-radius);
+}
+.el-popper {
+  --el-popover-border-radius: var(--border-radius);
+}
+.el-message-box {
+  --el-messagebox-border-radius: var(--border-radius);
+}
+.el-loading-mask {
+  border-radius: var(--border-radius);
+}

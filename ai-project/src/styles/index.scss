@@ -1,0 +1,55 @@
+@import './animate.min.scss';
+@import './flex.scss';
+@import './transition.scss';
+@import './padding.scss';
+@import './margin.scss';
+@import './elementplus.scss';
+@import './nprogress.scss';
+@import './elementplus-theme.scss';
+
+html,
+body,
+#app,
+.body {
+  height: 100%;
+  width: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB,
+    Microsoft YaHei, Arial, sans-serif;
+  --border-radius: 8px;
+  // --el-border-radius-small: var(--border-radius);
+  --el-border-radius-base: var(--border-radius);
+  --primary-color: var(--el-color-primary);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#app {
+  --head-height: 60px;
+  --tag-height: 30px;
+  --foot-height: 30px;
+}
+
+.box-container {
+  width: 100%;
+  min-height: calc(
+    100vh - var(--head-height) - var(--foot-height) - var(--tag-height)
+  );
+  background: #f5f5f5;
+}
+
+.body-box {
+  min-height: calc(
+    100vh - var(--head-height) - var(--foot-height) - var(--tag-height)
+  );
+  --height: calc(
+    100vh - var(--head-height) - var(--foot-height) - var(--tag-height)
+  );
+  background: #f5f5f5;
+}

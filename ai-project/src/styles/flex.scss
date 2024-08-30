@@ -1,0 +1,66 @@
+/* 对齐方式 */
+// justify-content: center;     /* 居中排列 */
+// justify-content: start;      /* 从行首开始排列 */
+// justify-content: end;        /* 从行尾开始排列 */
+// justify-content: flex-start; /* 从行首起始位置开始排列 */
+// justify-content: flex-end;   /* 从行尾位置开始排列 */
+// justify-content: left;       /* 一个挨一个在对齐容器得左边缘 */
+// justify-content: right;      /* 元素以容器右边缘为基准，一个挨着一个对齐, */
+
+
+// justify-content: space-between;  /* 均匀排列每个元素
+//                                    首个元素放置于起点，末尾元素放置于终点 */
+// justify-content: space-around;  /* 均匀排列每个元素
+//                                    每个元素周围分配相同的空间 */
+// justify-content: space-evenly;  /* 均匀排列每个元素
+//                                    每个元素之间的间隔相等 */
+// justify-content: stretch;       /* 均匀排列每个元素
+//       
+.flex-jcs{
+        	display: flex;
+        	justify-content: flex-start;
+}                    
+.flex-jcc{
+	display: flex;
+	justify-content: center;
+}
+.flex-jce{
+	display: flex;
+	justify-content: flex-end;
+}
+.flex-jcb{
+	display: flex;
+	justify-content: space-between;
+}
+.flex-jca{
+	display: flex;
+	justify-content: space-around;
+}
+.flex-aic{
+	display: flex;
+	align-items: center;
+}
+.flex-aie{
+	display: flex;
+	align-items: flex-end;
+}
+.flex-dr{
+	display: flex;
+	flex-direction: row;
+}
+.flex-drr{
+	display: flex;
+	flex-direction: row-reverse;
+}
+.flex-dc{
+	display: flex;
+	flex-direction: column;
+}
+.flex-dcr{
+	display: flex;
+	flex-direction: column-reverse;
+}
+.flex-wrap{
+	display: flex;
+	flex-wrap: wrap;
+}
