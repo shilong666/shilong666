@@ -62,8 +62,7 @@ const props = defineProps({
 });
 
 const html = computed(() => {
-  const val = markdown.render(props.message);
-  return DOMPurify.sanitize(val);
+  return DOMPurify.sanitize(markdown.render(props.message));
 });
 </script>
 
@@ -96,8 +95,33 @@ const html = computed(() => {
     // line-height: 18px;
 
     :deep(.hljs) {
-      overflow-y: scroll;
       padding: 5px;
+      code {
+        display: flex;
+        flex-wrap: wrap;
+        .hljs-comment,
+        .hljs-string,
+        .hljs-regexp,
+        .language-javascript {
+          white-space: break-spaces;
+        }
+      }
+    }
+    :deep(ol) {
+      list-style: none;
+      padding-left: 10px;
+      counter-reset: item;
+      li {
+        position: relative;
+        padding-left: 8px;
+      }
+      li:before {
+        content: counter(item) '. ';
+        counter-increment: item;
+        position: absolute;
+        left: -8px;
+        top: 2px;
+      }
     }
   }
   .message-box.user {
@@ -105,6 +129,22 @@ const html = computed(() => {
   }
   .message-box.light {
     animation: ligitAmt linear 0.8s infinite;
+    :deep(span) {
+      p:last-child,
+      &:not(*) {
+        position: relative;
+        &::after {
+          content: '';
+          background: url('../../icons/loading.png') no-repeat;
+          background-size: cover;
+          width: 12px;
+          height: 12px;
+          animation: rate360 1s linear infinite;
+          display: inline-block;
+          vertical-align: baseline;
+        }
+      }
+    }
   }
 }
 
@@ -119,6 +159,14 @@ const html = computed(() => {
 
   100% {
     box-shadow: 0 0 5px rgb(101, 191, 255);
+  }
+}
+@keyframes rate360 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 </style>
