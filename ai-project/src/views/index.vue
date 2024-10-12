@@ -25,6 +25,7 @@
           v-model="data.inputMsg"
           @keydown.enter="doSendMsg"
           :readonly="data.inputLoading"
+          enterkeyhint="send"
         />
         <button class="button" :disabled="!data.inputMsg" @click="doSendMsg">
           发送
