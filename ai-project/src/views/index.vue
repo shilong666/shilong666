@@ -19,16 +19,16 @@
       </div>
 
       <div class="chat-input flex-dr">
-        <el-input
+        <textarea
           type="textarea"
           :placeholder="data.inputLoading ? '回答中...' : '请输入'"
           v-model="data.inputMsg"
           @keydown.enter="doSendMsg"
           :readonly="data.inputLoading"
         />
-        <el-button type="primary" :disabled="!data.inputMsg" @click="doSendMsg">
+        <button class="button" :disabled="!data.inputMsg" @click="doSendMsg">
           发送
-        </el-button>
+        </button>
       </div>
     </div>
   </div>
@@ -187,8 +187,50 @@ const doScroll = () => {
   }
   .chat-input {
     padding: 10px;
-    .el-button {
+    textarea {
+      flex: 1;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      padding: 10px;
+      box-shadow: 2px 2px 5px rgba (0, 0, 0, 0.1);
+      background-color: #f9f9f9;
+      color: #333;
+      /* 自定义滚动条 */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background-color: #f9f9f9;
+      }
+      ::-webkit-scrollbar-thumb {
+        background-color: #ccc;
+      }
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      background: #000;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
       margin-left: 10px;
+    }
+    button:focus {
+      outline: none;
+    }
+    button:disabled {
+      background-color: #cccccc !important;
+      background-image: none;
+      /* 更淡的背景色 */
+      color: #666666;
+      /* 更淡的文字颜色 */
+      box-shadow: none;
+      /* 去掉阴影 */
+      opacity: 0.6;
+      /* 降低透明度 */
     }
   }
 }

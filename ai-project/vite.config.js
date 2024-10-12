@@ -1,26 +1,13 @@
 import { defineConfig, loadEnv } from 'vite';
 import vue from '@vitejs/plugin-vue';
-import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 import path from 'path';
-import vueJsx from '@vitejs/plugin-vue-jsx';
-// import postcssPxtoRem from 'postcss-pxtorem';
 
 // https://vitejs.dev/config/
 export default ({ mode }) => {
   const env = loadEnv(mode, process.cwd());
   console.log('---env', env, mode);
   return defineConfig({
-    plugins: [
-      vue(),
-      // jsx for vue
-      vueJsx(),
-      // svgicon
-      createSvgIconsPlugin({
-        // process.cwd()会返回一个nodejs进程的当前目录
-        iconDirs: [path.resolve(process.cwd(), 'src/icons')],
-        symbolId: 'svg-icon-[dir]-[name]'
-      })
-    ],
+    plugins: [vue()],
     resolve: {
       alias: {
         // __dirname Node全局变量，标识被执行的js文件的目录

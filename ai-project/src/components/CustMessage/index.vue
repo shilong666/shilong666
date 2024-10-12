@@ -4,7 +4,7 @@
     :class="{ 'flex-jce': props.role === 'user' }"
   >
     <div class="user-avatar" v-if="props.role === 'assistant'">
-      <el-image :src="AiImage"></el-image>
+      <img :src="AiImage" />
     </div>
     <div
       class="message-box"
@@ -13,7 +13,7 @@
       <span v-html="html"></span>
     </div>
     <div class="user-avatar" v-if="props.role === 'user'">
-      <el-image :src="UserImage"></el-image>
+      <img :src="UserImage" />
     </div>
   </div>
 </template>
@@ -74,7 +74,7 @@ const html = computed(() => {
     width: 40px;
     height: 40px;
 
-    .ell-image {
+    img {
       width: inherit;
       height: inherit;
       border-radius: 40px;
@@ -87,7 +87,7 @@ const html = computed(() => {
     padding: 10px;
     border-radius: 10px;
     margin: 0 10px;
-    max-width: calc(100% - 120px);
+    max-width: calc(100% - 100px);
     text-align: justify;
     word-break: break-all;
     position: relative;
