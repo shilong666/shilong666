@@ -82,12 +82,13 @@ const html = computed(() => {
   }
 
   .message-box {
-    background: #fff;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    --msgColor: #fff;
+    background: var(--msgColor);
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));
     padding: 10px;
     border-radius: 10px;
-    margin: 0 10px;
-    max-width: calc(100% - 100px);
+    margin-left: 10px;
+    max-width: calc(100% - 40px);
     text-align: justify;
     word-break: break-all;
     position: relative;
@@ -97,15 +98,7 @@ const html = computed(() => {
     :deep(.hljs) {
       padding: 5px;
       code {
-        display: flex;
-        flex-wrap: wrap;
         white-space: break-spaces;
-        // .hljs-comment,
-        // .hljs-string,
-        // .hljs-regexp,
-        // .language-javascript {
-        //   white-space: break-spaces;
-        // }
       }
     }
     :deep(ol) {
@@ -126,13 +119,18 @@ const html = computed(() => {
     }
   }
   .message-box.user {
-    background: #95ec69;
+    // background: #95ec69;
+    --msgColor: #000;
+    background: var(--msgColor);
+    color: white;
+    margin-right: 10px;
+    margin-left: none;
   }
   .message-box.light {
     animation: ligitAmt linear 0.8s infinite;
     :deep(span) {
-      p:last-child,
-      &:not(*) {
+      > p:last-child,
+      > ol:last-child li:last-child > p:last-child {
         position: relative;
         &::after {
           content: '';
@@ -147,19 +145,35 @@ const html = computed(() => {
       }
     }
   }
+  .message-box::before {
+    content: '';
+    position: absolute;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent var(--msgColor) transparent transparent;
+    top: 10px;
+    /* 调整这个值来改变三角形的位置 */
+    left: -18px;
+    /* 让三角形居中 */
+  }
+  .message-box.user::before {
+    left: auto;
+    right: -18px;
+    border-color: transparent transparent transparent var(--msgColor);
+  }
 }
 
 @keyframes ligitAmt {
   0% {
-    box-shadow: 0 0 5px rgb(101, 191, 255);
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
   }
 
   50% {
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));
   }
 
   100% {
-    box-shadow: 0 0 5px rgb(101, 191, 255);
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
   }
 }
 @keyframes rate360 {
@@ -169,5 +183,9 @@ const html = computed(() => {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
 }
 </style>

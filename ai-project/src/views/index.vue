@@ -152,7 +152,6 @@ const doSendMsg = () => {
               textArray
                 .map((item) => item.choices[0].delta.content || '')
                 .join('');
-            console.log('data.resMsg', data.resMsg);
           }
           doScroll();
         }
@@ -209,6 +208,12 @@ const doScroll = () => {
         background-color: #ccc;
       }
     }
+    textarea:focus {
+      outline: none;
+      /* 去掉默认的轮廓线 */
+      border: 2px solid #000;
+    }
+
     button {
       padding: 10px 20px;
       border: none;
