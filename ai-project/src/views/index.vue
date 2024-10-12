@@ -53,10 +53,12 @@ const data = reactive({
 onMounted(() => {
   data.messageList = appStore.getMessageList();
   doScroll();
+  window.addEventListener('resize', doScroll);
 });
 
 onBeforeUnmount(() => {
   appStore.setMessageList(data.messageList.slice(-100));
+  window.removeEventListener('resize');
 });
 
 const messageListRef = ref();
