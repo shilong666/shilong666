@@ -99,12 +99,13 @@ const html = computed(() => {
       code {
         display: flex;
         flex-wrap: wrap;
-        .hljs-comment,
-        .hljs-string,
-        .hljs-regexp,
-        .language-javascript {
-          white-space: break-spaces;
-        }
+        white-space: break-spaces;
+        // .hljs-comment,
+        // .hljs-string,
+        // .hljs-regexp,
+        // .language-javascript {
+        //   white-space: break-spaces;
+        // }
       }
     }
     :deep(ol) {
